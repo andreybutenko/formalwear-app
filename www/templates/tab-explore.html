@@ -1,0 +1,33 @@
+<ion-view view-title="Explore">
+    <ion-content>
+        <ion-list>
+            <div class="list list-inset list-search">
+                <label class="item item-input">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input type="text" ng-model="searchTerm" placeholder="Search for people, clubs, posts">
+                </label>
+                <a class="button button-clear button-search" ng-href="#/tab/explore/search/{{ searchTerm }}">Search</a>
+            </div>
+            <div class="list list-flex">
+                <a class="item" ng-href="#/tab/explore/profile/{{ userId }}">
+                    <i class="icon ion-android-person"></i>
+                    Your Profile
+                </a>
+                <a class="item" ng-href="#/tab/explore/tips">
+                    <i class="icon ion-bowtie"></i>
+                    Fashion Tips
+                </a>
+                <a class="item" ng-href="#/tab/explore/editProfile">
+                    <i class="icon ion-edit"></i>
+                    Edit Profile
+                </a>
+            </div>
+            <div class="card" style="margin-bottom: -22px;">
+                <div class="item">
+                    Newest posts on Formal Wear:
+                </div>
+            </div>
+            <div ng-include src="'templates/postsList.html'"></div>
+        </ion-list>
+    </ion-content>
+</ion-view>

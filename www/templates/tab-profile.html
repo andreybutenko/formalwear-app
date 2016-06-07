@@ -1,0 +1,43 @@
+<ion-view view-title="Profile" class="view-profile">
+    <ion-content>
+        <div class="profile-info">
+            <div class="profile-row">
+                <img class="profile-image" ng-src="{{ user.imageUrl }}" />
+                <div class="profile-name">
+                    {{ user.name.first }} {{ user.name.last }}
+                </div>
+            </div>
+            <div class="card" ng-show="user.description || user.school || user.clubs.length > 1">
+                <div class="item item-text-wrap" ng-show="user.description">
+                    <span class="label">Bio</span>
+                    <span class="content">{{ user.description }}</span>
+                </div>
+                <div class="item item-text-wrap" ng-show="user.school">
+                    <span class="label">School</span>
+                    <span class="content">{{ user.school }}</span>
+                </div>
+                <div class="item item-text-wrap" ng-show="user.clubs.length > 1">
+                    <span class="label">Clubs</span>
+                    <span class="content" ng-repeat="club in user.clubs">{{ club }}<span ng-hide="$last">, </span></span>
+                </div>
+            </div>
+            <div ng-hide="hideFollow">
+                <div class="button button-full button-positive" ng-click="follow()" ng-show="canFollow">
+                    Follow {{ user.name.first }}
+                </div>
+                <div class="button button-full button-positive" ng-click="unfollow()" ng-hide="canFollow">
+                    Unfollow {{ user.name.first }}
+                </div>
+            </div>
+            <a class="button button-full button-positive" ng-href="#/tab/explore/editProfile" ng-show="hideFollow">
+                Edit Profile
+            </a>
+        </div>
+        <div ng-include src="'templates/postsList.html'"></div>
+        <div class="card" ng-show="posts.length == 0">
+            <div class="item">
+                {{ user.name.first }} hasn't posted anything yet!
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

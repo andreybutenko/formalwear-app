@@ -1,0 +1,9 @@
+.button-search {
+    color: #444 !important;
+    transition: color 200ms;
+}
+
+.button-search.activated {
+    color: $positive !important;
+    opacity: 1 !important;
+}

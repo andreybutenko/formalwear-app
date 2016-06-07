@@ -1,0 +1,14 @@
+.item-answer-prompt {
+    height: 54px;
+
+    .badge {
+        left: 11px;
+        right: auto;
+    }
+
+    .text {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

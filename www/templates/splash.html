@@ -1,0 +1,77 @@
+<ion-view class="view-splash" view-title="Formal Wear">
+    <div class="configure">
+        <a href="#" class="ion-gear-a" ng-click="configure()" ng-show="false"></a>
+    </div>
+    <ion-content scroll="false">
+        <div class="flex">
+            <div class="hero">
+                <img src="img/FormalWearx256.png" />
+                <h1>Formal Wear</h1>
+            </div>
+
+            <div class="slides-container">
+                <ion-slide-box class="slide-box">
+                    <ion-slide class="slide intro">
+                        <div class="card">
+                            <div class="item item-text-wrap">
+                                <h1>Don't stress about clothes.</h1>
+                                <p>
+                                    When preparing for competition, conference, performance, or any other formal event,
+                                    you have to have an appropriate outfit.
+                                </p>
+                                <p>
+                                    That's where we can help.
+                                </p>
+                                <a href="#" class="button button-stable icon-right ion-chevron-right continue-button" ng-click="nextSlide();">Learn more</a>
+                            </div>
+                        </div>
+                    </ion-slide>
+                    <ion-slide class="slide outro">
+                        <div class="card">
+                            <div class="item item-text-wrap">
+                                <h1>Re-assure yourself.</h1>
+                                <p>
+                                    Using Formal Wear, you can send pictures of your clothes to your friends to get their opinion.
+                                    Their feedback can help you finalize your outfit to avoid stress and unassuredness.
+                                </p>
+                                <a href="#" class="button button-stable icon-right ion-chevron-right continue-button" ng-click="nextSlide();">Learn more</a>
+                            </div>
+                        </div>
+                    </ion-slide>
+                    <ion-slide class="slide outro">
+                        <div class="card">
+                            <div class="item item-text-wrap">
+                                <h1>Help your friends.</h1>
+                                <p>
+                                    In addition to getting feedback from friends, you can give feedback to them by answering yes-or-no
+                                    questions or giving a more long-form response. How nice of you!
+                                </p>
+                                <a href="#" class="button button-stable icon-right ion-chevron-right continue-button" ng-click="nextSlide();">Get started</a>
+                            </div>
+                        </div>
+                    </ion-slide>
+                    <ion-slide class="slide outro">
+                        <div class="card">
+                            <div class="item item-text-wrap">
+                                <h1>Stop worrying; get started!</h1>
+                                <p>
+                                    You can sign in with Facebook to avoid registering yet another account.
+                                    We promise to not post anything without your explicit permission!
+                                </p>
+                                <p>
+                                    If you prefer, you can also sign in with your email.
+                                </p>
+                                <i class="ion-android-arrow-down continue-button" style="font-size: 32px; text-align: center;"></i>
+                            </div>
+                        </div>
+                    </ion-slide>
+                </ion-slide-box>
+            </div>
+
+            <div class="action">
+                <a href="#" class="facebook button" ng-click="login()">Continue with Facebook</a>
+                <a href="#/email" class="email button button-stable">Sign up with email</a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

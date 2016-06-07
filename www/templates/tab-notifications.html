@@ -1,0 +1,15 @@
+<ion-view view-title="Notifications">
+    <ion-content>
+        <ion-refresher pulling-text="Pull to refresh..." on-refresh="update()"></ion-refresher>
+        <ion-list>
+            <a class="item item-avatar" ng-repeat="notification in notifications" ng-href="#/tab/notifications/post/{{ notification.location }}">
+                <img ng-src="{{ notification.authorData.imageUrl }}" />
+                <h2>{{ notification.authorData.name.first }} {{ notification.type }}<span ng-hide="notification.type == 'vote'">e</span>d on your post</h2>
+                {{ notification.time }}
+            </a>
+            <div class="item item-text-wrap" ng-show="notifications.length == 0">
+                No notifications yet! But don't worry - as you start posting more, responses and comments will show up here.
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>

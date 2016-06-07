@@ -1,0 +1,63 @@
+<ion-view view-title="Fashion Tips">
+    <ion-content tab-view ng-init="setupTabs(['men', 'women'])">
+        <div class="tabs" style="position: relative;">
+            <a class="tab-item tab-item-active" id="tab-men" ng-click="switchTo('men')" href="#">Men</a>
+            <a class="tab-item" id="tab-women" ng-click="switchTo('women')" href="#">Women</a>
+        </div>
+
+        <div class="card men" ng-show="showView['men']">
+            <div class="item item-text-wrap">
+                <h2>Fashion tips for men</h2>
+                <div class="padding">
+                    <h3>Business Professional</h3>
+                    <ul style="list-style-type: disc; margin-left: 2em;">
+                        <li>Suit</li>
+                        <li>Dress Slacks</li>
+                        <li>Tucked-in, button-down shirt</li>
+                        <li>Tie</li>
+                        <li>Belt</li>
+                        <li>Dress socks</li>
+                        <li>Dress shoes</li>
+                        <li>Conservative accessories</li>
+                    </ul>
+                </div>
+                <div class="padding">
+                    <h3>Business Casual</h3>
+                    <ul style="list-style-type: disc; margin-left: 2em;">
+                        <li>Slacks, khakis, or corduroy</li>
+                        <li>Polo or button-down shirt or sweater</li>
+                        <li>Appropriate socks and shoes</li>
+                        <li>Conservative accessories</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card women" ng-show="showView['women']">
+            <div class="item item-text-wrap">
+                <h2>Fashion tips for women</h2>
+                <div class="padding">
+                    <h3>Business Professional</h3>
+                    <ul style="list-style-type: disc; margin-left: 2em;">
+                        <li>Suit</li>
+                        <li>Dress Slacks, professional dress, or professional skirt</li>
+                        <li>Tucked-in, button-down shirt or blouse</li>
+                        <li>Belt</li>
+                        <li>Dress socks</li>
+                        <li>Dress shoes</li>
+                        <li>Conservative accessories</li>
+                    </ul>
+                </div>
+                <div class="padding">
+                    <h3>Business Casual</h3>
+                    <ul style="list-style-type: disc; margin-left: 2em;">
+                        <li>Slacks, khakis, or skirts</li>
+                        <li>Polo or button-down shirt, blouse, or sweater</li>
+                        <li>Appropriate socks and shoes</li>
+                        <li>Conservative accessories</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

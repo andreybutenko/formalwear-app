@@ -1,0 +1,56 @@
+.view-editProfile {
+    .item-picture {
+        padding-top: 22px;
+
+        img {
+            margin-top: -6px;
+            float: left;
+            margin-right: 10px;
+            height: 50px;
+        }
+    }
+
+    .item-description {
+        textarea {
+            height: 100px;
+            resize: none;
+        }
+    }
+
+    .item-add-club {
+        .icon {
+            text-align: center;
+            display: inline-block;
+            color: white;
+            background-color: $balanced;
+            border-radius: 2px;
+            height: 22px;
+            width: 22px;
+            line-height: 22px;
+            margin-left: 2px;
+            margin-right: 15px;
+        }
+
+        border-bottom: none;
+    }
+
+    .list {
+        padding-bottom: 75px;
+    }
+
+    .button-action {
+        position: fixed;
+        margin: 0;
+        bottom: 15px;
+        left: 15px;
+        width: 60%;
+    }
+}
+
+.platform-ios {
+    .view-editProfile {
+        .button-action {
+            bottom: 60px;
+        }
+    }
+}

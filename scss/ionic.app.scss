@@ -1,0 +1,42 @@
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+// Custom styles
+@import "item-answer-prompt";
+@import "tab-standout";
+@import "header-buttons";
+@import "email-view";
+@import "view-editProfile";
+@import "list-flex";
+@import "profile-info";
+@import "item-comment";
+@import "comment-author-info";
+
+@import "feed/author-info";
+@import "feed/empty-state";
+@import "feed/item-description";
+@import "feed/item-interview";
+@import "feed/item-action";
+@import "feed/full-image";
+
+@import "navbar/nav-hidden";
+@import "navbar/nav-overlay";
+
+@import "splash/utility";
+@import "splash/hero";
+@import "splash/slider";
+@import "splash/action";
+
+@import "search/list-search";
+@import "search/button-search";
+@import "search/view-search";
+@import "search/profile-info-compact";
+
+@import "composer/add-item";
+@import "composer/item";
+@import "composer/tabs-composer";
+@import "composer/composer-details";
+@import "composer/utility";

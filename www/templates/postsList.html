@@ -1,0 +1,33 @@
+<ion-list>
+    <ion-item class="card post-card" ng-repeat="post in posts">
+        <div class="item author-info discovery-template">
+            <a class="info" ng-href="#/tab/{{ baseurl }}/profile/{{ post.authorData['_id'] }}">
+                <img ng-src="{{ post.authorData.imageUrl }}" class="profilePicture">
+                <h2 class="name">{{ post.author.full }}</h2>
+                <span class="date">{{ post.time }}</span>
+            </a>
+            <div class="action" action-btn author-id="{{ post.authorData['_id'] }}" author-first="{{ post.author.first }}" post-id="{{ post.id }}" can-follow="unknown"></div>
+        </div>
+
+        <div class="item image-item">
+            <img class="full-image" ng-src="{{ post.image }}">
+        </div>
+        <div class="item item-description item-icon-right item-text-wrap" ng-class="{ 'expanded': expanded }" ng-show="!!post.description.trim()" toggle-desc>
+            <div class="trigger-area" ng-click="toggle();">&nbsp;</div>
+            <i class="icon" ng-class="(expanded) ? 'ion-ios-arrow-up' : 'ion-ios-arrow-down'"></i>
+            <div class="description">
+                {{ post.description }}
+            </div>
+        </div>
+        <a class="item item-action item-answer-prompt item-icon-right" ng-href="#/tab/{{ baseurl }}/post/{{ post.id }}" ng-show="post.questionCount > 0">
+            <span class="badge badge-assertive">{{ post.questionCount }}</span>
+            <i class="icon ion-ios-arrow-right"></i>
+            <span class="text">{{ post.author.first }} has questions for you!</span>
+        </a>
+        <a class="item item-action item-answer-prompt item-icon-right" ng-href="#/tab/{{ baseurl }}/post/{{ post.id }}" ng-show="post.questionCount == 0">
+            <span class="icon-comment"><i class="ion-chatbox"></i></span>
+            <i class="icon ion-ios-arrow-right"></i>
+            <span class="text">Comment on {{ post.author.first }}'s post!</span>
+        </a>
+    </ion-item>
+</ion-list>

@@ -1,0 +1,31 @@
+$tab-size: 93.75px;
+
+.platform-ios {
+    .tab-standout {
+        margin-top: #{ -0.4 * $tab-size };
+        padding-top: #{ 0.4 * $tab-size };
+        height: #{ 2 * $tab-size };
+
+        background-color: $positive !important;
+        opacity: 1;
+        color: $light !important;
+
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+    }
+}
+
+.platform-android {
+    .tab-standout {
+        /*margin-top: #{ -1.05 * $tab-size };
+        padding-top: #{ 1.05 * $tab-size };
+        height: #{ 2 * $tab-size };*/
+
+        background-color: $positive !important;
+        opacity: 1;
+        color: $light !important;
+
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+    }
+}

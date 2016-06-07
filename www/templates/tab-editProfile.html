@@ -1,0 +1,63 @@
+<ion-view view-title="Edit Profile" class="view-editProfile">
+    <ion-content>
+        <div class="list">
+
+            <div class="item item-divider">
+                Profile
+            </div>
+
+            <div class="item item-picture" ng-click="takePicture()">
+                <img ng-src="{{ userSecure.imageData }}" />
+                Profile Picture<br/>
+                Tap to change
+            </div>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">First name</span>
+                <input type="text" ng-model="user.name.first" placeholder="First name">
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Last name</span>
+                <input type="text" ng-model="user.name.last" placeholder="Last name">
+            </label>
+
+            <div class="item item-divider">
+                About you
+            </div>
+            <label class="item item-input item-floating-label item-description">
+                <span class="input-label">Bio</span>
+                <textarea placeholder="Bio - describe yourself" id="user-description" ng-model="user.description"></textarea>
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">School</span>
+                <input type="text" ng-model="user.school" placeholder="School">
+            </label>
+
+            <div class="item item-divider">
+                Clubs and Organizations
+            </div>
+            <ion-checkbox ng-repeat="(club, participation) in clubs" ng-model="clubs[club]">{{ club }}</ion-checkbox>
+            <div class="item item-add-club" ng-click="addClub()">
+                <span class="icon ion-plus"></span>
+                Add another club
+            </div>
+
+
+            <div class="item item-divider" ng-hide="userSecure.email == 'NO'">
+                Account
+            </div>
+            <label class="item item-input item-floating-label" ng-hide="userSecure.email == 'NO'">
+                <span class="input-label">Email</span>
+                <input type="email" ng-model="userSecure.email" placeholder="Email">
+            </label>
+            <label class="item item-input item-floating-label" ng-hide="userSecure.email == 'NO'">
+                <span class="input-label">Current Password</span>
+                <input type="password" ng-model="userSecure.password" placeholder="Current Password">
+            </label>
+            <label class="item item-input item-floating-label" ng-hide="userSecure.email == 'NO'">
+                <span class="input-label">New Password</span>
+                <input type="password" ng-model="userSecure.newPassword" placeholder="New Password">
+            </label>
+        </div>
+    </ion-content>
+    <a href="#" class="button button-full button-balanced button-action" ng-click="save()">Save</a>
+</ion-view>

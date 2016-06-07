@@ -1,0 +1,54 @@
+<ion-view view-title="Search results" class="view-search">
+    <ion-content tab-view ng-init="setupTabs(['people', 'posts'])">
+        <div class="list list-inset list-search">
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" ng-model="searchTerm" placeholder="Search for people, clubs, posts">
+            </label>
+            <div class="button button-clear button-search" ng-click="search(searchTerm)">Search</div>
+        </div>
+
+        <div class="tabs tabs-composer" style="position: relative;">
+            <a class="tab-item tab-item-active" id="tab-people" ng-click="switchTo('people')" href="#">People</a>
+            <a class="tab-item" id="tab-posts" ng-click="switchTo('posts')" href="#">Posts</a>
+        </div>
+
+        <div class="people list" ng-show="showView['people']">
+            <div class="profile-info-compact item" ng-repeat="user in people">
+                <a class="profile-row" ng-href="#/tab/explore/profile/{{ user['_id'] }}">
+                    <img class="profile-image" ng-src="{{ user.imageUrl }}" />
+                    <div class="profile-name">
+                        {{ user.name.first }} {{ user.name.last }}
+                    </div>
+                    <div class="profile-overview">
+                        {{ user.school }}
+                    </div>
+                </a>
+                <div class="action" ng-hide="user.hideFollow">
+                    <div class="button button-positive" href ng-click="follow($index, user['_id']); $event.stopPropagation();" ng-show="user.canFollow">
+                        Follow {{ user.name.first }}
+                    </div>
+                    <div class="button button-positive" href ng-click="unfollow($index, user['_id']); $event.stopPropagation();" ng-show="!user.canFollow">
+                        Unfollow {{ user.name.first }}
+                    </div>
+                </div>
+            </div>
+            <div class="item item-text-wrap" ng-hide="areUsers">
+                No results found.
+                <span ng-show="arePosts">There are some post results for this search, however!</span>
+                <span ng-hide="arePosts">You can try a more general term, like "Inglemoor" or "FBLA".</span>
+            </div>
+        </div>
+        <div class="posts" ng-show="showView['posts']" ng-include src="'templates/postsList.html'">
+
+        </div>
+        <div class="list" ng-show="showView['posts']">
+            <div class="item item-text-wrap" ng-hide="arePosts">
+                No results found.
+                <span ng-show="areUsers">There are some people results for this search, however!</span>
+                <span ng-hide="areUsers">You can try a more general term, like "Inglemoor" or "FBLA".</span>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

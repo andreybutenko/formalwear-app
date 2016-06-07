@@ -1,0 +1,16 @@
+.composer {
+    .item-prompt {
+        padding-left: 0;
+        display: flex;
+        .icon {
+            position: absolute;
+            left: 15px;
+            font-size: 20px;
+        }
+        .entry {
+            padding-left: 46px;
+            flex-grow: 1;
+            white-space:normal;
+        }
+    }
+}

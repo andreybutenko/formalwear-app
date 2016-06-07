@@ -1,0 +1,37 @@
+
+// showing and hiding
+.nav-hidden {
+    .bar.nav-bar-container {
+        top: -45px;
+    }
+
+    &.platform-ios .ionic-scroll.has-header {
+        top: 0px;
+    }
+    &.platform-android .ionic-scroll.has-header {
+        top: 51px;
+    }
+
+    &.platform-android .tabs {
+        top: 0px;
+    }
+}
+
+.bar.nav-bar-container {
+    top: 0px;
+    transition: all 250ms;
+}
+
+.platform-android .tabs {
+    margin-top: 0 !important;
+    transition: top 250ms;
+    height: 52px;
+}
+.platform-android .tab-item {
+    margin-top: 0 !important;
+    padding-top: 3px;
+    border-bottom: none !important;
+    i {
+        margin-top: 0 !important;
+    }
+}

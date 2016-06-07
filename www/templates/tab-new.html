@@ -1,0 +1,53 @@
+<ion-view view-title="New Post" class="composer">
+    <ion-content overflow-scroll="true">
+        <div class="tabs tabs-composer" style="position: relative;">
+            <a class="tab-item tab-item-active" id="tab-details" ng-click="switchTo('details')" href="#">Details</a>
+            <a class="tab-item" id="tab-questions" ng-click="switchTo('questions')" href="#">Questions</a>
+            <a class="tab-item" id="tab-privacy" ng-click="switchTo('privacy')" href="#">Privacy</a>
+        </div>
+
+        <div class="details" ng-show="showView['details']">
+            <img class="preview" ng-src="data:image/png;base64,{{ imgDataURL }}" />
+            <div class="list">
+                <label class="item item-input item-floating-label item-description">
+                    <span class="input-label">Description</span>
+                    <textarea placeholder="Description" id="user-description"></textarea>
+                </label>
+            </div>
+        </div>
+
+        <div class="questions" ng-show="showView['questions']">
+            <div class="item item-prompt" ng-repeat="prompt in prompts" id="prompt-{{ prompt.id }}" ng-click="clickedItem(prompt.id)">
+                <span class="icon ion-close-circled assertive" ng-show="deleting" ng-click="removeItem(prompt.id)"></span>
+                <span class="icon ion-chevron-up" ng-show="reordering" ng-click="upItem(prompt.id)"></span>
+                <span class="user-prompt-entry entry" contentEditable="true" ng-blur="saveItem(prompt.id)">{{ prompt.text }}</span>
+            </div>
+
+            <div class="item add-item" ng-click="createItem()">
+                <span class="icon ion-plus-circled balanced"></span>
+                Add new question
+            </div>
+            <div class="item add-item" ng-click="displayRemoveItem()" ng-show="showDelete">
+                <span class="icon ion-close-circled assertive"></span>
+                <span ng-hide="deleting">Delete questions</span>
+                <span ng-show="deleting">Cancel deleting questions</span>
+            </div>
+            <div class="item add-item" ng-click="displayReorderItem()" ng-show="showReorder">
+                <span class="icon rotate ion-code"></span>
+                <span ng-hide="reordering">Reorder questions</span>
+                <span ng-show="reordering">Stop reordering questions</span>
+            </div>
+        </div>
+
+        <div class="privacy" ng-show="showView['privacy']">
+            <ul class="list">
+                <ion-toggle ng-checked="true" id="user-discovery" ng-click="toggleDiscovery()">
+                    Display on discovery tab?
+                </ion-toggle>
+            </ul>
+        </div>
+    </ion-content>
+    <div class="action button button-balanced button-full" ng-click="post()">
+        Post
+    </div>
+</ion-view>

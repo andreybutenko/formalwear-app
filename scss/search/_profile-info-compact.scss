@@ -1,0 +1,37 @@
+.profile-info-compact {
+    display: flex;
+
+    a {
+        color: black;
+        text-decoration: none;
+    }
+
+    .profile-row {
+        flex-grow: 1;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        .profile-image {
+            float: left;
+            width: 50px;
+            margin-right: 5px;
+        }
+
+        .profile-name {
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+    }
+
+    .action {
+        .button {
+            min-height: 0;
+            line-height: 1em;
+            display: block;
+            font-size: 13px;
+            margin: 7px 0 5px 0;
+            padding: 10px;
+        }
+    }
+}

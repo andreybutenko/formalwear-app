@@ -1,0 +1,56 @@
+.view-splash {
+    .slides-container {
+        position: relative;
+        flex-grow: 1;
+
+        .slide-box {
+            position: absolute;
+            width: 100%;
+            background-color: $positive;
+        }
+
+        .slide-box, .slider, .slider-slides {
+            height: 100% !important;
+        }
+
+        .slide {
+            height: 100%;
+
+            .card {
+                margin-top: 0;
+                height: calc(100% - 50px);
+
+                h1 {
+                    font-size: 22px;
+                    margin-bottom: 20px;
+                }
+
+                p {
+                    margin-bottom: 10px;
+                }
+
+                .item {
+                    position: relative;
+                    height: 100%;
+                }
+
+                .continue-button {
+                    position: absolute;
+                    left: 10px;
+                    right: 10px;
+                    bottom: 10px;
+                }
+            }
+        }
+
+        @media screen and (max-height: 510px) {
+            .slide .card {
+                height: calc(100% - 20px;)
+            }
+
+            .slider-pager {
+                bottom: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+<ion-nav-bar class="bar bar-positive" id="nav-bar">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+    <div class="overlay">
+        <div class="button button-assertive button-icon ion-android-more-vertical" ng-click="popover.show($event);"></div>
+    </div>
+</ion-nav-bar>
+
+<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+
+    <ion-tab title="Feed" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/feed">
+        <ion-nav-view name="tab-feed"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="Notifications" icon="ion-android-notifications-none" href="#/tab/notifications">
+        <ion-nav-view name="tab-notifications"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="Explore" icon="ion-ios-search" href="#/tab/explore" ng-click="navigate('tab.explore')">
+        <ion-nav-view name="tab-explore"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="Post" icon="ion-plus-round" href="#/tab/blank" class="tab-standout" ng-click="new();">
+        <ion-nav-view name="tab-new"></ion-nav-view>
+    </ion-tab>
+
+</ion-tabs>

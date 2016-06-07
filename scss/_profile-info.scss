@@ -1,0 +1,43 @@
+.profile-info {
+    padding: 20px;
+    background-color: $stable;
+
+    .profile-row {
+        position: relative;
+
+        .profile-image {
+            width: 50px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .profile-name {
+            position: absolute;
+            vertical-align: center;
+            left: 60px;
+            top: 50%;
+            margin-top: -0.55em;
+            font-size: 32px;
+            padding-left: 5px;
+            height: 100%;
+        }
+    }
+
+    .card {
+        margin: 5px 0px;
+        padding: 5px;
+    }
+
+    .label {
+        font-weight: 600;
+        font-size: 1em;
+        line-height: 1em;
+        margin: 0;
+        display: inline-block;
+        width: 50px;
+    }
+
+    .item-text-wrap .content {
+        
+    }
+}

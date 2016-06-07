@@ -1,0 +1,36 @@
+.item-description {
+    border-top: none;
+    margin-top: -2px;
+
+    .trigger-area {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 74px;
+        z-index: 5;
+    }
+    .icon {
+        height: auto;
+        top: 11px;
+    }
+    &.expanded {
+        white-space: normal;
+    }
+    .description {
+        width: calc(100% - 10px);
+        overflow: hidden;
+        height: 1.4em;
+    }
+}
+
+.expanded {
+    .description {
+        height: auto;
+    }
+}
+
+.item-no-border {
+    border-top: none;
+    margin-top: -2px;
+}

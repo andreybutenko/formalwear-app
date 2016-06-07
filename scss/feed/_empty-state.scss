@@ -1,0 +1,22 @@
+.empty-state {
+    margin-top: 20%;
+
+    h1 {
+        font-size: 28px;
+    }
+    p {
+        font-size: 16px;
+    }
+    .button {
+        margin-top: 32px;
+    }
+
+    .list {
+        margin-top: 25px;
+        .item {
+            background-color: $positive;
+            color: white;
+            margin: 5px;
+        }
+    }
+}

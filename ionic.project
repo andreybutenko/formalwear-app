@@ -1,0 +1,12 @@
+{
+  "name": "Formal Wear",
+  "app_id": "5ae8377d",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}

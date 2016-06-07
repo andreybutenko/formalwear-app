@@ -1,0 +1,88 @@
+<ion-view view-title="Questions">
+    <ion-content>
+        <ion-list>
+            <ion-item class="card post-card">
+                <div class="item author-info discovery-template">
+                    <a class="info" ng-href="#/tab/{{ baseurl }}/profile/{{ post.authorData['_id'] }}">
+                        <img ng-src="{{ post.authorData.imageUrl }}" class="profilePicture">
+                        <h2 class="name">{{ post.author.full }}</h2>
+                        <span class="date">{{ post.time }}</span>
+                    </a>
+                    <div class="action" ng-hide="post.hideFollow">
+                        <div class="button button-positive" ng-click="follow($index, post.authorData['_id'])" ng-show="post.canFollow">
+                            Follow {{ post.author.first }}
+                        </div>
+                        <div class="button button-positive" ng-click="unfollow($index, post.authorData['_id'])" ng-show="!post.canFollow">
+                            Unfollow {{ post.author.first }}
+                        </div>
+                    </div>
+                    <div class="action" ng-show="post.hideFollow">
+                        <div class="button button-assertive" ng-click="deletePost($index)">
+                            Delete Post
+                        </div>
+                    </div>
+                </div>
+                <div class="item image-item">
+                    <img class="full-image" ng-src="{{ post.image }}">
+                </div>
+                <div class="item item-description item-icon-right" ng-attr-id="{{ 'ques-desc-' + post.id }}" ng-show="!!post.description.trim()">
+                    <div class="trigger-area" ng-click="toggleDesc('ques-desc-' + post.id); post.expanded = !post.expanded;">&nbsp;</div>
+                    <i class="icon" ng-class="(post.expanded) ? 'ion-ios-arrow-up' : 'ion-ios-arrow-down'"></i>
+                    <div class="description">
+                        {{ post.description }}
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item class="card">
+                <div class="tabs tabs-composer" style="position: relative;">
+                    <a class="tab-item tab-item-active" id="tab-questions" ng-click="switchTo('questions')" href="#" ng-show="post.questions.length > 0">Questions</a>
+                    <a class="tab-item" id="tab-comments" ng-click="switchTo('comments')" href="#">Comments</a>
+                </div>
+                <div class="item item-interview" ng-repeat="(index, question) in post.questions" ng-show="showView['questions'] && post.questions.length > 0">
+                    <div class="item item-prompt item-text-wrap">
+                        {{ question }}
+                    </div>
+                    <div class="item item-response" ng-hide="voted[index]">
+                        <button class="button button-yes" ng-click="respond(true, index)">Yes</button>
+                        <button class="button button-no" ng-click="respond(false, index)">No</button>
+                    </div>
+                    <div class="item item-response item-text-wrap" ng-show="voted[index] && (stats[index].total > 0)">
+                        <b>{{ stats[index].yes }}</b> people said "yes".<br/>
+                        <b>{{ stats[index].no }}</b> people said "no".
+                    </div>
+                    <div class="item item-response item-text-wrap" ng-show="voted[index] && (stats[index].total == 0)">
+                        <b>No responses yet.</b><br/>
+                        Once your followers answer, you'll see their answers here!
+                    </div>
+                </div>
+                <div class="item" ng-show="showView['comments']">
+                    <label class="item item-input item-stacked-label item-comment item-description">
+                        <span class="input-label">Comment on {{ post.author.first }}'s outfit</span>
+                        <textarea placeholder="Give advice, feedback, or tips." ng-model="newCommentText"></textarea>
+                    </label>
+                    <a href="#" class="button button-positive button-full" ng-click="postComment(newCommentText)">Comment</a>
+                </div>
+                <div class="item item-text-wrap" ng-show="post.comments.length == 0 && showView['comments']">
+                    No comments on this post yet. You can be the first!
+                </div>
+                <div class="item item-comment" ng-show="showView['comments']" ng-repeat="comment in post.comments">
+                    <div class="comment-author-info">
+                        <a class="info" ng-href="#/tab/{{ baseurl }}/profile/{{ comment.authorData['_id'] }}">
+                            <img ng-src="{{ comment.authorData.imageUrl }}" class="profilePicture">
+                            <h2 class="name">{{ comment.author.full }}</h2>
+                            <span class="date">{{ comment.time }}</span>
+                        </a>
+                        <div class="action" ng-show="comment.amOwner">
+                            <div class="button button-assertive" ng-click="deleteComment(comment.id)">
+                                Delete Comment
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment-text">
+                        {{ comment.comment }}
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,28 @@
+<ion-view view-title="Feed">
+    <ion-content on-scroll="scroll()">
+        <ion-refresher pulling-text="Pull to refresh..." on-refresh="refresh()" on-pulling="pulling()"></ion-refresher>
+        <div ng-include src="'templates/postsList.html'"></div>
+        <div class="empty-state card" ng-show="empty">
+            <div class="item item-text-wrap">
+                <h1>No posts yet.</h1>
+                <p>You aren't following any other users!</p>
+                <p>Use Explore to search for people at your school or in your club, or just browse around.</p>
+                <p>Once you follow some people, your feed will start getting populated.</p>
+                <p>Also fill out your own profile so people can find you!</p>
+                <!--
+                <a ng-click="navigate('tab.explore')" class="button button-full button-positive">Go Discover!</a>
+                <a ng-href="#/tab/feed/editProfile" class="button button-full button-balanced">Update your profile!</a>-->
+                <div class="list list-flex">
+                    <a class="item" ng-click="navigate('tab.explore')">
+                        <i class="icon ion-ios-search"></i>
+                        Go Explore
+                    </a>
+                    <a class="item" ng-href="#/tab/feed/editProfile">
+                        <i class="icon ion-edit"></i>
+                        Edit Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

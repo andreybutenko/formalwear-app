@@ -1,0 +1,40 @@
+.post-card {
+    padding: 0;
+
+    .image-item {
+        padding: 0 !important;
+
+        .full-image {
+
+        }
+    }
+    .item {
+        padding: 16px 32px;
+    }
+
+    .discovery-template {
+        display: flex;
+        padding: 0 !important;
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .info {
+            padding: 8px 0 0 16px;
+            flex-grow: 1;
+        }
+        .action {
+
+            .button {
+                font-size: 12px;
+                min-height: 0;
+                margin-top: 15px;
+                line-height: 1em;
+                padding: 10px;
+                margin-right: 5px;
+            }
+        }
+    }
+}

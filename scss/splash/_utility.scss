@@ -1,0 +1,22 @@
+.view-splash .scroll {
+    height: 100%;
+}
+
+.view-splash .flex {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.configure {
+    z-index: 999;
+    position: fixed;
+    top: 5px;
+    right: 5px;
+
+    a {
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+    }
+}

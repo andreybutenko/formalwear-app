@@ -1,0 +1,16 @@
+.bar.nav-bar-container {
+    .overlay {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        z-index: 999;
+        display: flex;
+        flex-direction: row-reverse;
+        margin-top: 4px;
+
+        .button {
+            padding: 0 15px;
+        }
+    }
+}
